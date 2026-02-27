@@ -1,6 +1,5 @@
 package com.swg.task.user.service.config;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 import org.jspecify.annotations.Nullable;
 import org.springframework.context.annotation.Bean;
@@ -23,20 +22,18 @@ import java.util.Collections;
 public class ApplicationConfiguration {
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement(
 
                 management -> management.sessionCreationPolicy(
-                        SessionCreationPolicy.STATELESS
-                )
-        ).authorizeHttpRequests(
-                Authorize-> Authorize.requestMatchers("/api/**").authenticated().anyRequest().permitAll()
-        ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
-                        .csrf(csrf->csrf.disable()).cors(cors->cors
-                        .configurationSource(corsConfigurationSource() ))
-                        .httpBasic(Customizer.withDefaults())
-                        .formLogin(Customizer.withDefaults());
-
+                        SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(
+                        Authorize -> Authorize.requestMatchers("/api/**").authenticated().anyRequest().permitAll())
+                .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
+                .csrf(csrf -> csrf.disable()).cors(cors -> cors
+                        .configurationSource(corsConfigurationSource()))
+                .httpBasic(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults());
 
         return http.build();
     }
@@ -59,9 +56,8 @@ public class ApplicationConfiguration {
         };
     }
 
-
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
