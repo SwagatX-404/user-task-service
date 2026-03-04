@@ -34,6 +34,13 @@ spring:
       ddl-auto: update
     show-sql: true
 ```
+
+## JWT CONSTANT 
+ - SECRET_KEY="xyz";
+ - JWT_HEADER="Authorization";
+ service config_
+
+
 ## Author
 - Swagat Murmu
 - MCA Student | Full Stack Developer | Spring Boot Enthusiast
