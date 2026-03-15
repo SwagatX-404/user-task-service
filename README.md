@@ -21,18 +21,23 @@ Client → API Gateway → User Task Service → Database
 
 ## API Endpoints
 
-## Database Configuration
+## Database Configuration 
+- [application.yaml] file
 ```bash 
+server:
+  port: 5001
+
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/task_db
-    username: root
-    password: your_password
+  application:
+    name: TASK-USER-SERVICE
 
   jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+    hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_task_user_service
+    username: root
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
 ## JWT CONSTANT 
