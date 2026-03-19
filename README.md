@@ -46,8 +46,13 @@ spring:
  service config_
 
 
-## Author
-- Swagat Murmu
-- MCA Student | Full Stack Developer | Spring Boot Enthusiast
+## 👤 Author
+
+**Swagat Murmu**  
+*Master of Computer Applications (MCA)*
+- **Primary Skills:** 
+  - **Backend:** Java & Spring Boot
+  - **Frontend:** React & JavaScript
+  - **Database:** SQL
 
 
